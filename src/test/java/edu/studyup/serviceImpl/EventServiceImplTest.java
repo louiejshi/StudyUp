@@ -233,7 +233,7 @@ class EventServiceImplTest {
 	
 	// Test Case 10
 	@Test
-	void testGetPastEvents_One_Past_One_Active_Event() {
+	void testGetPastEvents_One_Past_Event() {
 		
 		//Create Student
 		Student student = new Student();
@@ -245,7 +245,7 @@ class EventServiceImplTest {
 		//Create Event2
 		Event event = new Event();
 		event.setEventID(2);
-		event.setDate(new Date(2060, 01, 03));
+		event.setDate(new Date(1990, 01, 03));
 		event.setName("Event 2");
 		Location location = new Location(-122, 37);
 		event.setLocation(location);
