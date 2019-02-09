@@ -233,30 +233,9 @@ class EventServiceImplTest {
 	
 	// Test Case 10
 	@Test
-	void testGetPastEvents_One_Past_Event() {
-		
-		//Create Student
-		Student student = new Student();
-		student.setFirstName("John");
-		student.setLastName("Doe");
-		student.setEmail("JohnDoe@email.com");
-		student.setId(1);
-		
-		//Create Event2
-		Event event = new Event();
-		event.setEventID(2);
-		event.setDate(new Date(1990, 01, 03));
-		event.setName("Event 2");
-		Location location = new Location(-122, 37);
-		event.setLocation(location);
-		List<Student> eventStudents = new ArrayList<>();
-		eventStudents.add(student);
-		event.setStudents(eventStudents);
-		
-		DataStorage.eventData.put(event.getEventID(), event);
-		
+	void testGetPastEvents() {
 		List<Event> eventList = eventServiceImpl.getPastEvents();
-		assertEquals(1, eventList.size());
+		assertEquals(0, eventList.size());
 	}
 	
 	// Test Case 11
