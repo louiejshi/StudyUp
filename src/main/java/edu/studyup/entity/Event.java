@@ -46,10 +46,10 @@ public class Event {
 	}
 
 	
-	public Date getDate() {
-		//SPOTBUG FIX 3 - Ali 
-		//return date;
-		return date == null ? null : (Date) date.clone();
+	
+	public Date getDate() { 
+		return date;
+			
 	}
 
 	public void setDate(Date date) {
