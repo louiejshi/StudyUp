@@ -46,11 +46,15 @@ public class Event {
 	}
 
 	public Date getDate() {
-		return date;
+		//SPOTBUG FIX 3 - Ali 
+		//return date;
+		return date == null ? null : (Date) date.clone();
 	}
 
 	public void setDate(Date date) {
-		this.date = date;
+		//SPOTBUG FIX 4` - Ali 
+		//this.date = date;
+		this.date = new Date(date.getTime());
 	}
 
 	public int getEventID() {
