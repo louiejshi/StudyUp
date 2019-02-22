@@ -33,17 +33,12 @@ public class EventServiceImpl implements EventService {
 	public List<Event> getActiveEvents() {
 		Map<Integer, Event> eventData = DataStorage.eventData;
 		List<Event> activeEvents = new ArrayList<>();
-
-		// Spotbug Fix #1: Louie Shi
-		for (Map.Entry< Integer, Event > entry : eventData.entrySet()) {
-			Event ithEvent= entry.getValue();
+		
+		for (Integer key : eventData.keySet()) {
+			Event ithEvent= eventData.get(key);
 			activeEvents.add(ithEvent);
 		}
 		
-//		for (Integer key : eventData.keySet()) {
-//			Event ithEvent= eventData.get(key);
-//			activeEvents.add(ithEvent);
-//		}
 		return activeEvents;
 	}
 
@@ -51,23 +46,15 @@ public class EventServiceImpl implements EventService {
 	public List<Event> getPastEvents() {
 		Map<Integer, Event> eventData = DataStorage.eventData;
 		List<Event> pastEvents = new ArrayList<>();
-
-		// Spotbug Fix #2: Louie Shi
-		for (Map.Entry< Integer, Event > entry : eventData.entrySet()) {
-			Event ithEvent= entry.getValue();
+		
+		for (Integer key : eventData.keySet()) {
+			Event ithEvent= eventData.get(key);
 			// Checks if an event date is before today, if yes, then add to the past event list.
 			if(ithEvent.getDate().before(new Date())) {
 				pastEvents.add(ithEvent);
 			}
 		}
 		
-//		for (Integer key : eventData.keySet()) {
-//			Event ithEvent= eventData.get(key);
-//			// Checks if an event date is before today, if yes, then add to the past event list.
-//			if(ithEvent.getDate().before(new Date())) {
-//				pastEvents.add(ithEvent);
-//			}
-//		}
 		return pastEvents;
 	}
 
