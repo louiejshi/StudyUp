@@ -45,6 +45,7 @@ public class Event {
 		this.students = students;
 	}
 
+	
 	public Date getDate() {
 		//SPOTBUG FIX 3 - Ali 
 		//return date;
