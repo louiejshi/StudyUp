@@ -51,8 +51,6 @@ public class Event {
 	}
 
 	public void setDate(Date date) {
-		//SPOTBUG FIX 4` - Ali 
-		//this.date = date;
 		this.date = new Date(date.getTime());
 	}
 
