@@ -45,13 +45,15 @@ public class Event {
 		this.students = students;
 	}
 
-	
 	public Date getDate() {
-		return date;
+		//SPOTBUG FIX 3 - Ali 
+		//return date;
+		return date == null ? null : (Date) date.clone();
 	}
 
 	public void setDate(Date date) {
 		this.date = new Date(date.getTime());
+		
 	}
 
 	public int getEventID() {
